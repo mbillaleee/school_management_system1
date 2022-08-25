@@ -26,7 +26,40 @@
                                 @enderror
                             </div><br>
                             <div class="form-group">
-                                <label for="">Address * </label>
+                                <label for="">Mobile * </label>
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="text" class="form-control" name="name" value="">
+                                </div>
+                                @error('name')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div><br>
+                            <div class="form-group">
+                                <label for="">Email * </label>
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="text" class="form-control" name="name" value="">
+                                </div>
+                                @error('name')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div><br>
+                            <div class="form-group">
+                                <label for="">Image *</label>
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="file" class="form-control" name="image" value="">
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <label for="">Present Address * </label>
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="text" class="form-control" name="name" value="">
+                                </div>
+                                @error('name')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div><br>
+                            <div class="form-group">
+                                <label for="">Permanent Address *</label>
                                 <div class="form-check-inline col-lg-10">
                                     <input type="text" class="form-control" name="name" value="">
                                 </div>
@@ -40,13 +73,7 @@
                                     <input type="text" class="form-control" name="name" value="">
                                 </div>
                             </div><br>
-                            <div class="form-group">
-                                <label for="">Image *</label>
-                                <div class="form-check-inline col-lg-10">
-                                    <input type="file" class="form-control" name="image" value="">
-                                </div>
-                                
-                            </div>
+                            
                         </div>
                     </div>
                     <button class="btn btn-primary btn-block">Add student</button>
@@ -67,7 +94,10 @@
                                 <tr>
                                     <th scope="col">SL No</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Adress</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">Email </th>
+                                    <th scope="col">Present Adress</th>
+                                    <th scope="col">Permanent Adress</th>
                                     <th scope="col">Class</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Action</th>
