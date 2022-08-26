@@ -75,12 +75,16 @@
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
+
                             <div class="form-group">
-                                <label for="">Class *</label>
-                                <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="current_class" value="">
-                                </div>
-                                @error('current_class')
+                                <label class="form-label">Class</label>
+                                <select class="form-control" name="current_class" id="">
+                                    <option value="">--select one--</option>
+                                    @foreach($studentclasses as $studentclass)
+                                        <option value="{{ $studentclass->id }}">{{ $studentclass->class_name }}</option>
+                                    @endforeach
+                                </select>
+                                 @error('current_class')
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>

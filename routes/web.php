@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentClassController;
+use App\Http\Controllers\SubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,11 +43,24 @@ Route::get('/class', [StudentClassController::class, 'showData']);
 Route::get('/add/student', [StudentController::class, 'addstudent']);
 Route::post('/add/student/post', [StudentController::class, 'addstudentpost']);
 Route::get('/update/student/{student_id}', [StudentController::class, 'updatestudent']);
+Route::post('/update/class/post', [StudentController::class, 'updateclasspost']);
+Route::get('/delete/class/{student_id}', [StudentController::class, 'deletestudent']);
 
 
 
 
 
 Route::get('/add/class', [StudentClassController::class, 'addclass']);
-Route::post('/add/class/post', [StudentController::class, 'addclasspost']);
-// Route::get('/update/student/{student_id}', [StudentController::class, 'updatestudent']);
+Route::post('/add/class/post', [StudentClassController::class, 'addclasspost']);
+Route::get('/update/class/{class_id}', [StudentClassController::class, 'updateclass']);
+Route::post('/update/class/post', [StudentClassController::class, 'updateclasspost']);
+Route::get('/delete/class/{class_id}', [StudentClassController::class, 'deleteclass']);
+
+
+
+
+Route::get('/add/subject', [SubjectController::class, 'addsubject']);
+Route::post('/add/subject/post', [SubjectController::class, 'addsubjectpost']);
+Route::get('/update/subject/{subject_id}', [SubjectController::class, 'updatesubject']);
+Route::post('/update/subject/post', [SubjectController::class, 'updatesubjectpost']);
+Route::get('/delete/subject/{subject_id}', [SubjectController::class, 'deletesubject']);

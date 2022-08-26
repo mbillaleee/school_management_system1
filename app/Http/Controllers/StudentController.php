@@ -7,6 +7,7 @@ use App\Models\Student;
 use Auth;
 use Carbon\Carbon;
 use Image;
+use App\Models\Studentclass; 
 
 class StudentController extends Controller
 {
@@ -21,7 +22,8 @@ class StudentController extends Controller
 
     function addstudent(){
     	$students = Student::all();
-    	return view('admin.student.index', compact('students'));
+        $studentclasses = Studentclass::all();
+    	return view('admin.student.index', compact('students', 'studentclasses'));
     }
 
     function addstudentpost(Request $request){
@@ -80,5 +82,10 @@ class StudentController extends Controller
         // $student_name =  Student::find($student_id)->name;
      //    $student_image =  Student::find($student_id)->image;
         // return view('admin.student.update', compact('student_name', 'student_image'));
+    }
+
+    function deletestudent($student_id){
+        Studentclass::find($student_id)->delete();
+        return back()->with('delete_status', 'Student Information delete successfully');
     }
 }

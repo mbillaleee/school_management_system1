@@ -40,6 +40,24 @@
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
+                            <div class="form-group">
+                                <label for="">Class * </label>
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="text" class="form-control" name="class_name" value="" placeholder="Enter Class">
+                                </div>
+                                @error('name')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div><br>
+                            <div class="form-group">
+                                <label for="">Class * </label>
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="text" class="form-control" name="class_name" value="" placeholder="Enter Class">
+                                </div>
+                                @error('name')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div><br>
                            
                             
                         </div>
@@ -66,15 +84,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            	@forelse($studentclasses as $studentclass)
+                            	@forelse($subjects as $subject)
                             	<tr>
                             		<td> {{ $loop->index + 1 }} </td>
-                            		<td>{{ $studentclass->class_name }}</td>
+                            		<td>{{ $subject->class_name }}</td>
                             		<td>
-                            			<div class="btn-group" role="group">
-                            				<a type="button" href="{{ url('update/class') }}/{{ $studentclass->id }}" class="btn btn-info text-white">Update</a>
-                                            <a type="button" href="{{ url('delete/class') }}/{{ $studentclass->id }}" class="btn btn-danger text-white">Delete</a>
-                            			</div>
+                            			
                             		</td>
                             	</tr>
                             	@empty

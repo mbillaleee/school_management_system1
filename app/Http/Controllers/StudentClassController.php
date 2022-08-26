@@ -27,14 +27,33 @@ class StudentClassController extends Controller
     	
 
     	$studentclassid = Studentclass::insertGetId([
-    		'class_name'	=> $request->class_name,
+    		'class_name'	=> $request->class_name
     	]);
 
-        Studentclass::find($studentclassid)->update([
-            'class_name' =>$class_name
-        ]);
+        // Studentclass::find($studentclassid)->update([
+        //     'class_name' =>$class_name
+        // ]);
 
-    	return back()->with('success_message', 'Student information added successfully');
+    	return back()->with('success_message', 'Student Class added successfully');
+    }
+
+    function updateclass($class_id){
+    	$class_name =  Studentclass::find($class_id)->class_name;
+    	return view('admin.class.update', compact('class_name', 'class_id'));
+    }
+
+    function updateclasspost(Request $request){
+    	// print_r($request->class_name);
+    	// print_r($request->class_id);
+    	Studentclass::find($request->class_id)->update([
+    		'class_name' => $request->class_name
+    	]);
+    	return redirect('add/class')->with('update_status', 'Class updated successfully');
+    }
+
+    function deleteclass($class_id){
+    	Studentclass::find($class_id)->delete();
+    	return back()->with('delete_status', 'Class delete successfully');
     }
 
    
