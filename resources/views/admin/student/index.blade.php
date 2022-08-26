@@ -80,6 +80,9 @@
                                 <div class="form-check-inline col-lg-10">
                                     <input type="text" class="form-control" name="current_class" value="">
                                 </div>
+                                @error('current_class')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div><br>
                             
                         </div>
@@ -121,7 +124,9 @@
                             		<td>{{ $student->present_address }}</td>
                             		<td>{{ $student->permanent_address }}</td>
                             		<td>{{ $student->current_class }}</td>
-                            		<td>{{ $student->image }}</td>
+                            		<td>
+                            			<img src="{{ asset('uploads/students')}}/{{ $student->image }}" width="50" alt="Image not found">
+                            		</td>
                             		<td>
                             			<div class="btn-group" role="group">
                             				<a type="button" href="{{ url('update/student') }}/{{ $student->id }}" class="btn btn-info text-white">Update</a>

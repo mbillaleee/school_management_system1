@@ -15,7 +15,7 @@
             		{{ session('success_message') }}
             	</div>
             	@endif
-                <form action="{{ url('add/student/post') }}" class="form" method="post">
+                <form action="{{ url('add/student/post') }}" class="form" method="post" enctype="multipart/form-data">
                     @csrf
                     <h4>Student Information add</h4>
                     <div class="row">
@@ -33,7 +33,7 @@
                             <div class="form-group">
                                 <label for="">Mobile * </label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="mobile" value="" placeholder="Enter mobile number">
+                                    <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="Enter mobile number">
                                 </div>
                                 @error('mobile')
                                     <br><span class="text-danger">{{ $message }}</span>
@@ -50,8 +50,19 @@
                             </div><br>
                             <div class="form-group">
                                 <label for="">Image *</label>
+
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="file" class="form-control" name="image" value="">
+                                    <img src="{{ asset('uploads/students')}}/{{ $student_image }}" alt="No image found">
+                                </div>
+                                @error('image')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div><br>
+                            <div class="form-group">
+                                <label for="">New Image *</label>
+
+                                <div class="form-check-inline col-lg-10">
+                                    <input type="file" class="form-control" name="new_image">
                                 </div>
                                 @error('image')
                                     <br><span class="text-danger">{{ $message }}</span>
