@@ -24,7 +24,7 @@ class StudentController extends Controller
     		'name' => 'required',
     		'mobile' => 'required',
     		'email' => 'required',
-    		'image' => 'required',
+    		'image' => 'required|image',
     		'present_address' => 'required',
     		'permanent_address' => 'required',
     		'current_class' => 'required'
@@ -39,7 +39,7 @@ class StudentController extends Controller
     	]);
     	
 
-    	Student::insert([
+    	$stuent_id = Student::insert([
     		'name'	=> $request->name,
     		'mobile'	=> $request->mobile,
     		'email'	=> $request->email,
@@ -48,6 +48,10 @@ class StudentController extends Controller
     		'permanent_address'	=> $request->permanent_address,
     		'current_class'	=> $request->permanent_address
     	]);
+
+    	$uploaded_photo = $request->file('image');
+    	
+    	echo $new_name = $id.".".$uploaded_photo->extension();
 
     	return back()->with('success_message', 'Student information added successfully');
     }

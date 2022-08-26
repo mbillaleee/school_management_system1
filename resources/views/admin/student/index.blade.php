@@ -15,7 +15,7 @@
             		{{ session('success_message') }}
             	</div>
             	@endif
-                <form action="{{ url('add/student/post') }}" class="form" method="post">
+                <form action="{{ url('add/student/post') }}" class="form" method="post" enctype="multipart/form-data">
                     @csrf
                     <h4>Student Information add</h4>
                     <div class="row">
