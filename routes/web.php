@@ -24,8 +24,8 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('/home', [StudentController::class, 'index'])->name('student');
-Route::get('/student', [StudentController::class, 'showData']);
-Route::post('/studentPost', [supplierController::class, 'studentPost'])->name('supplierPost');
+// Route::get('/student', [StudentController::class, 'showData']);
+// Route::post('/studentPost', [supplierController::class, 'studentPost'])->name('supplierPost');
 
 // Route::get('/supplier', [supplierController::class, 'supplier'])->name('supplier');
 // Route::post('/supplierPost', [supplierController::class, 'supplierPost'])->name('supplierPost');
@@ -34,3 +34,10 @@ Route::post('/studentPost', [supplierController::class, 'studentPost'])->name('s
 
 
 Route::get('/class', [StudentClassController::class, 'showData']);
+
+
+
+
+Route::get('/add/student', [StudentController::class, 'addstudent']);
+Route::post('/add/student/post', [StudentController::class, 'addstudentpost']);
+Route::get('/update/student/{student_id}', [StudentController::class, 'updatestudent']);

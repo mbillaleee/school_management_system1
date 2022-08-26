@@ -9,7 +9,7 @@
                
             </div>
             <div class="card-body">
-                <form action="" class="form" method="post">
+                <form action="{{ url('add/student/post') }}" class="form" method="post">
                 	
                     @csrf
                     <h4>Student Information add</h4>
@@ -47,12 +47,6 @@
                                 <tr>
                                     <th scope="col">SL No</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Mobile</th>
-                                    <th scope="col">Email </th>
-                                    <th scope="col">Present Adress</th>
-                                    <th scope="col">Permanent Adress</th>
-                                    <th scope="col">Class</th>
-                                    <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
