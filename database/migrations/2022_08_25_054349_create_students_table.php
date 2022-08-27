@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateStudentsTable extends Migration
 {
     /**
@@ -23,6 +24,7 @@ class CreateStudentsTable extends Migration
             $table->string('permanent_address');
             $table->string('current_class');
             $table->timestamps();
+            $table->softDeletes();
 
         });
     }
@@ -35,5 +37,6 @@ class CreateStudentsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('students');
+        $table->dropSoftDeletes();
     }
 }

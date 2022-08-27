@@ -81,7 +81,7 @@
                                 <select class="form-control" name="current_class" id="">
                                     <option value="">--select one--</option>
                                     @foreach($studentclasses as $studentclass)
-                                        <option value="{{ $studentclass->id }}">{{ $studentclass->class_name }}</option>
+                                        <option value="{{ $studentclass->class_name }}">{{ $studentclass->class_name }}</option>
                                     @endforeach
                                 </select>
                                  @error('current_class')
@@ -134,7 +134,7 @@
                             		<td>
                             			<div class="btn-group" role="group">
                             				<a type="button" href="{{ url('update/student') }}/{{ $student->id }}" class="btn btn-info text-white">Update</a>
-                            				<a type="button" href="" class="btn btn-danger text-white">Delete</a>
+                            				<a type="button" href="{{ url('delete/student') }}/{{ $student->id }}" class="btn btn-danger text-white">Delete</a>
                             			</div>
                             		</td>
                             	</tr>

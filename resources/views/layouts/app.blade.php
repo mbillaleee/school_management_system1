@@ -35,6 +35,8 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link" href="{{ url('/add/student') }}">Add Students</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/add/class') }}">Add Class</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/add/subject') }}">Add subject</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/add/mark') }}">Add Mark</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

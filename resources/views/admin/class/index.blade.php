@@ -44,6 +44,7 @@
                             
                         </div>
                     </div>
+                    
                     <button class="btn btn-primary btn-block">Add student</button>
                 </form>
             </div>

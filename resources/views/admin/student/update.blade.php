@@ -15,7 +15,7 @@
             		{{ session('success_message') }}
             	</div>
             	@endif
-                <form action="{{ url('add/student/post') }}" class="form" method="post" enctype="multipart/form-data">
+                <form action="{{ url('update/student/post') }}" class="form" method="post" enctype="multipart/form-data">
                     @csrf
                     <h4>Student Information add</h4>
                     <div class="row">
@@ -24,6 +24,7 @@
                             <div class="form-group">
                                 <label for="">Name * </label>
                                 <div class="form-check-inline col-lg-10">
+                                    <input type="text" name="student_id" value="{{ $student_id }}">
                                     <input type="text" class="form-control" name="name" value="{{ $student_name }}" placeholder="Enter student name">
                                 </div>
                                 @error('name')
@@ -33,7 +34,7 @@
                             <div class="form-group">
                                 <label for="">Mobile * </label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" placeholder="Enter mobile number">
+                                    <input type="text" class="form-control" name="mobile" value="{{ $student_mobile }}" placeholder="Enter mobile number">
                                 </div>
                                 @error('mobile')
                                     <br><span class="text-danger">{{ $message }}</span>
@@ -42,12 +43,16 @@
                             <div class="form-group">
                                 <label for="">Email * </label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="email" value="" placeholder="Enter email">
+                                    <input type="text" class="form-control" name="email" value="{{ $student_email }}" placeholder="Enter email">
                                 </div>
                                 @error('email')
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
+
+
+
+
                             <div class="form-group">
                                 <label for="">Image *</label>
 
@@ -68,10 +73,16 @@
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
+
+
+
+
+
+
                             <div class="form-group">
                                 <label for="">Present Address * </label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="present_address" value=""  placeholder="Enter present address">
+                                    <input type="text" class="form-control" name="present_address" value="{{ $student_present_address }}"  placeholder="Enter present address">
                                 </div>
                                 @error('present_address')
                                     <br><span class="text-danger">{{ $message }}</span>
@@ -80,17 +91,24 @@
                             <div class="form-group">
                                 <label for="">Permanent Address *</label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="permanent_address" value="" placeholder="Enter permanent address">
+                                    <input type="text" class="form-control" name="permanent_address" value="{{ $student_permanent_address }}" placeholder="Enter permanent address">
                                 </div>
                                 @error('permanent_address')
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
+
                             <div class="form-group">
-                                <label for="">Class *</label>
-                                <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="current_class" value="">
-                                </div>
+                                <label class="form-label">Class</label>
+                                <select class="form-control" name="student_current_class" id="" value="{{ $student_current_class }}">
+                                    <option value="">--select one--</option>
+                                    @foreach($studentclasses as $studentclass)
+                                        <option value="{{ $studentclass->student_current_class }}">{{ $studentclass->student_current_class }}</option>
+                                    @endforeach
+                                </select>
+                                 @error('current_class')
+                                    <br><span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div><br>
                             
                         </div>

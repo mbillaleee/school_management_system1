@@ -15,7 +15,7 @@
                     {{ session('update_status') }}
                 </div>
                 @endif
-                <form action="{{ url('update/class/post') }}" class="form" method="post">
+                <form action="{{ url('update/subject/post') }}" class="form" method="post">
                     @csrf
                     <h4>Student Class add</h4>
                     <div class="row">
@@ -24,8 +24,8 @@
                             <div class="form-group">
                                 <label for="">Class * </label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="hidden" name="class_id" value="{{ $class_id }}">
-                                    <input type="text" class="form-control" name="class_name" value="{{ $class_name }}" placeholder="Enter Class">
+                                    <input type="hidden" name="subject_id" value="{{ $subject_id }}">
+                                    <input type="text" class="form-control" name="subject_name" value="{{ $subject_name }}" placeholder="Enter subject">
                                 </div>
                                 @error('name')
                                     <br><span class="text-danger">{{ $message }}</span>

@@ -25,39 +25,25 @@
                     {{ session('delete_status') }}
                 </div>
                 @endif
-                <form action="{{ url('add/class/post') }}" class="form" method="post">
+                <form action="{{ url('add/subject/post') }}" class="form" method="post">
                     @csrf
                     <h4>Student Class add</h4>
                     <div class="row">
                          <div class="col-lg-2"></div>
                         <div class="col-lg-10">
+
+                           
+                           
                             <div class="form-group">
-                                <label for="">Class * </label>
+                                <label for="">Subject Name * </label>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="class_name" value="" placeholder="Enter Class">
+                                    <input type="text" class="form-control" name="subject_name" value="" placeholder="Enter subject">
                                 </div>
-                                @error('name')
+                                @error('subject_name')
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
-                            <div class="form-group">
-                                <label for="">Class * </label>
-                                <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="class_name" value="" placeholder="Enter Class">
-                                </div>
-                                @error('name')
-                                    <br><span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div><br>
-                            <div class="form-group">
-                                <label for="">Class * </label>
-                                <div class="form-check-inline col-lg-10">
-                                    <input type="text" class="form-control" name="class_name" value="" placeholder="Enter Class">
-                                </div>
-                                @error('name')
-                                    <br><span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div><br>
+                            
                            
                             
                         </div>
@@ -79,7 +65,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">Class</th>
+                                    <th scope="col">Subject Name </th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -87,10 +73,13 @@
                             	@forelse($subjects as $subject)
                             	<tr>
                             		<td> {{ $loop->index + 1 }} </td>
-                            		<td>{{ $subject->class_name }}</td>
+                                    <td>{{ $subject->subject_name }}</td>
                             		<td>
-                            			
-                            		</td>
+                                        <div class="btn-group" role="group">
+                                            <a type="button" href="{{ url('update/subject') }}/{{ $subject->id }}" class="btn btn-info text-white">Update</a>
+                                            <a type="button" href="{{ url('delete/subject') }}/{{ $subject->id }}" class="btn btn-danger text-white">Delete</a>
+                                        </div>
+                                    </td>
                             	</tr>
                             	@empty
                                 <tr>

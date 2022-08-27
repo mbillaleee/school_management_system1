@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentClassController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\MarkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +44,8 @@ Route::get('/class', [StudentClassController::class, 'showData']);
 Route::get('/add/student', [StudentController::class, 'addstudent']);
 Route::post('/add/student/post', [StudentController::class, 'addstudentpost']);
 Route::get('/update/student/{student_id}', [StudentController::class, 'updatestudent']);
-Route::post('/update/class/post', [StudentController::class, 'updateclasspost']);
-Route::get('/delete/class/{student_id}', [StudentController::class, 'deletestudent']);
+Route::post('/update/student/post', [StudentController::class, 'updatestudentpost']);
+Route::get('/delete/student/{student_id}', [StudentController::class, 'deletestudent']);
 
 
 
@@ -64,3 +65,14 @@ Route::post('/add/subject/post', [SubjectController::class, 'addsubjectpost']);
 Route::get('/update/subject/{subject_id}', [SubjectController::class, 'updatesubject']);
 Route::post('/update/subject/post', [SubjectController::class, 'updatesubjectpost']);
 Route::get('/delete/subject/{subject_id}', [SubjectController::class, 'deletesubject']);
+
+
+
+
+
+
+Route::get('/add/mark', [MarkController::class, 'addmark']);
+Route::post('/add/mark/post', [MarkController::class, 'addmarkpost']);
+Route::get('/update/mark/{mark_id}', [MarkController::class, 'updatemark']);
+Route::post('/update/mark/post', [MarkController::class, 'updatemarkpost']);
+Route::get('/delete/mark/{mark_id}', [MarkController::class, 'deletemark']);
