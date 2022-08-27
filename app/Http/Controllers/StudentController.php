@@ -114,10 +114,21 @@ class StudentController extends Controller
         // $student_name =  Student::find($student_id)->name;
      //    $student_image =  Student::find($student_id)->image;
         // return view('admin.student.update', compact('student_name', 'student_image'));
+
+      return redirect('add/student');
+
     }
 
     function deletestudent($student_id){
-        Studentclass::find($student_id)->delete();
+        // dd($student_id);
+
+        $student_del = Student::find($student_id);
+        unlink(base_path('public/uploads/students/'.$student_del->image));
+        $student_del->delete();
+        
         return back()->with('delete_status', 'Student Information delete successfully');
     }
 }
+
+
+

@@ -22,9 +22,9 @@
                          <div class="col-lg-2"></div>
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <label for="">Name * </label>
+                                <label for="">Name  </label><br>
                                 <div class="form-check-inline col-lg-10">
-                                    <input type="text" name="student_id" value="{{ $student_id }}">
+                                    <input type="hidden" name="student_id" value="{{ $student_id }}">
                                     <input type="text" class="form-control" name="name" value="{{ $student_name }}" placeholder="Enter student name">
                                 </div>
                                 @error('name')
@@ -32,7 +32,7 @@
                                 @enderror
                             </div><br>
                             <div class="form-group">
-                                <label for="">Mobile * </label>
+                                <label for="">Mobile  </label><br>
                                 <div class="form-check-inline col-lg-10">
                                     <input type="text" class="form-control" name="mobile" value="{{ $student_mobile }}" placeholder="Enter mobile number">
                                 </div>
@@ -41,7 +41,7 @@
                                 @enderror
                             </div><br>
                             <div class="form-group">
-                                <label for="">Email * </label>
+                                <label for="">Email </label><br>
                                 <div class="form-check-inline col-lg-10">
                                     <input type="text" class="form-control" name="email" value="{{ $student_email }}" placeholder="Enter email">
                                 </div>
@@ -54,7 +54,7 @@
 
 
                             <div class="form-group">
-                                <label for="">Image *</label>
+                                <label for="">Image </label><br>
 
                                 <div class="form-check-inline col-lg-10">
                                     <img src="{{ asset('uploads/students')}}/{{ $student_image }}" alt="No image found">
@@ -64,7 +64,7 @@
                                 @enderror
                             </div><br>
                             <div class="form-group">
-                                <label for="">New Image *</label>
+                                <label for="">New Image </label><br>
 
                                 <div class="form-check-inline col-lg-10">
                                     <input type="file" class="form-control" name="new_image">
@@ -73,14 +73,8 @@
                                     <br><span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div><br>
-
-
-
-
-
-
                             <div class="form-group">
-                                <label for="">Present Address * </label>
+                                <label for="">Present Address </label><br>
                                 <div class="form-check-inline col-lg-10">
                                     <input type="text" class="form-control" name="present_address" value="{{ $student_present_address }}"  placeholder="Enter present address">
                                 </div>
@@ -89,7 +83,7 @@
                                 @enderror
                             </div><br>
                             <div class="form-group">
-                                <label for="">Permanent Address *</label>
+                                <label for="">Permanent Address </label><br>
                                 <div class="form-check-inline col-lg-10">
                                     <input type="text" class="form-control" name="permanent_address" value="{{ $student_permanent_address }}" placeholder="Enter permanent address">
                                 </div>
@@ -99,7 +93,7 @@
                             </div><br>
 
                             <div class="form-group">
-                                <label class="form-label">Class</label>
+                                <label class="form-label">Class</label><br>
                                 <select class="form-control" name="student_current_class" id="" value="{{ $student_current_class }}">
                                     <option value="">--select one--</option>
                                     @foreach($studentclasses as $studentclass)
